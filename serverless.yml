@@ -68,7 +68,7 @@ functions:
     events:
       - http:
           path: notes
-          methos: get
+          method: get
           cors: true
           authorizer: aws_iam
 
@@ -109,7 +109,7 @@ functions:
 
 # Create our resources with separate CloudFormation templates
 resources:
-# API Gateway Errors
-- ${file(resources/api-gateway-errors.yml)}      
+  # API Gateway Errors
+  - ${file(resources/api-gateway-errors.yml)}      
 
 

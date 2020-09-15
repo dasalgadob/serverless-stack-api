@@ -13,13 +13,13 @@ export const main = handler(async (event, context) => {
     // - 'noteId': a unique uuid
     // - 'content': parsed from request body
     // - 'attachment': parsed from request body
-    // - 'createdAt': current Unix timestamp 
+    // - 'createdAt': current Unix timestamp
     Item: {
       userId: event.requestContext.identity.cognitoIdentityId,
       noteId: uuid.v1(),
       content: data.content,
       attachment: data.attachment,
-      createdAt: Date.now()      
+      createdAt: Date.now()
     }
   };
   await dynamoDb.put(params);
